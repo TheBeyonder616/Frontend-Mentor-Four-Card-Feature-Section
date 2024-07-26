@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* --------Base--------------- */
+:root {
+  /* Primary Color */
+  --crl-Primary-red: hsl(0, 78%, 62%);
+  --crl-Primary-cyan: hsl(180, 62%, 55%);
+  --crl-Primary-orange: hsl(34, 97%, 64%);
+  --crl-Primary-blue: hsl(212, 86%, 64%);
+
+  /* Secondary */
+  --crl-Secondary-light: hsl(229, 6%, 66%);
+  --crl-Secondary-dark: hsl(234, 12%, 34%);
+  --crl-Secondary-gray: hsl(0, 0%, 98%);
+
+  /* Font */
+  --font-family: "Poppins", sans-serif;
+  --fWeight-large: 600;
+  --fWeight-medium: 400;
+  --fWeight-small: 200;
+
+  /* - Font size: 15px */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+
+body {
+  font-family: var(--font-family);
+  min-height: 100vh;
+  background-color: var(--crl-Secondary-gray);
+}
+
+/* ---------------Header----------------- */
+.header {
+  text-align: center;
+  margin: clamp(5rem, 10vw, 5.2rem) auto;
+}
+
+.header h1 {
+  font-weight: var(--fWeight-small);
+  color: var(--crl-Secondary-light);
+  font-size: clamp(2rem, 3vw, 4rem);
+}
+
+.header h1 span {
+  display: block;
+  font-weight: var(--fWeight-large);
+  color: var(--crl-Secondary-dark);
+  font-size: clamp(1.9rem, 3vw, 4rem);
+}
+.header p {
+  font-size: clamp(1.1rem, 1.5vw, 2rem);
+  width: 85%;
+  margin: 2vw auto;
+  color: var(--crl-Secondary-light);
+}
+
+/* ------------main----------------- */
+
+.card {
+  --card-box-shadow: rgba(163, 165, 174, 0.4);
+  border-radius: 0.5rem;
+  width: 90%;
+  margin: calc(5vw + 1px) auto;
+
+  box-shadow: 0.5rem 0.5rem 1rem var(--card-box-shadow),
+    -0.5rem -0.5rem 1rem var(--card-box-shadow),
+    0.5rem 0.5rem 1rem var(--card-box-shadow),
+    -0.5rem -0.5rem 1rem var(--card-box-shadow);
+  transition: box-shadow 0.2s ease-out;
+}
+
+@media only screen and (min-width: 64em) {
+  .card {
+    width: 100%;
+    margin: 0;
+  }
+}
+.card h2 {
+  width: 90%;
+  margin: 4vw auto 0 auto;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  color: var(--crl-Secondary-dark);
+}
+
+.card p {
+  width: 90%;
+  margin: 4vw auto;
+  font-size: clamp(1rem, 1.4vw, 2rem);
+  color: var(--crl-Secondary-light);
+  font-weight: var(--fWeight-medium);
+}
+
+.card div {
+  display: flex;
+  justify-content: end;
+  width: 90%;
+  padding: 0.5rem 0;
+}
+.card .imag-wrapper {
+  width: clamp(4rem, 8vw, 7rem);
+  height: auto;
+  display: flex;
+  justify-content: start;
+}
+
+.card img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* styling the box-shadow */
+.supervisor {
+  border-top: 3px solid var(--crl-Primary-cyan);
+
+  /* Giving each card a grid name */
+  grid-area: S;
+}
+
+.supervisor:hover,
+.supervisor:focus {
+  --sup-shadow: rgba(69, 211, 211, 0.2);
+  box-shadow: 0.5rem 0.5rem 1rem var(--sup-shadow),
+    -0.5rem -0.5rem 1rem var(--sup-shadow), 0.5rem 0.5rem 1rem var(--sup-shadow),
+    -0.5rem -0.5rem 1rem var(--sup-shadow);
+}
+
+.team {
+  border-top: 3px solid var(--crl-Primary-red);
+
+  /* Giving each card a grid name */
+  grid-area: T;
+}
+.team:hover,
+.team:focus {
+  --tm-shadow: rgba(234, 83, 83, 0.2);
+  box-shadow: 0.5rem 0.5rem 1rem var(--tm-shadow),
+    -0.5rem -0.5rem 1rem var(--tm-shadow), 0.5rem 0.5rem 1rem var(--tm-shadow),
+    -0.5rem -0.5rem 1rem var(--tm-shadow);
+}
+
+.karma {
+  border-top: 3px solid var(--crl-Primary-orange);
+
+  /* Giving each card a grid name */
+  grid-area: K;
+}
+.karma:hover,
+.karma:focus {
+  --km-shadow: rgba(252, 175, 74, 0.2);
+  box-shadow: 0.5rem 0.5rem 1rem var(--km-shadow),
+    -0.5rem -0.5rem 1rem var(--km-shadow), 0.5rem 0.5rem 1rem var(--km-shadow),
+    -0.5rem -0.5rem 1rem var(--km-shadow);
+}
+
+.calculator {
+  border-top: 3px solid var(--crl-Primary-blue);
+
+  /* Giving each card a grid name */
+  grid-area: C;
+}
+
+.calculator:hover,
+.calculator:focus {
+  --calc-shadow: rgba(84, 158, 242, 0.2);
+  box-shadow: 0.5rem 0.5rem 1rem var(--calc-shadow),
+    -0.5rem -0.5rem 1rem var(--calc-shadow),
+    0.5rem 0.5rem 1rem var(--calc-shadow),
+    -0.5rem -0.5rem 1rem var(--calc-shadow);
+}
+
+/*--------------------- Desktop sixe--------------- */
+@media only screen and (min-width: 64em) {
+  .main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:
+      ". T ."
+      "S T C"
+      "S K C"
+      ". K .";
+    gap: 2rem 2rem;
+    margin: 0 auto;
+    width: 95%;
+  }
+}
+
+footer {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.attribution {
+  font-size: clamp(1rem, 3vw, 4rem);
+  color: var(--crl-Secondary-dark);
+}
+.attribution a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--crl-Secondary-dark);
+  transition: color 0.2s ease;
+}
+
+.attribution a:hover,
+.attribution a:focus {
+  color: var(--crl-Primary-cyan);
+}
